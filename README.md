@@ -23,8 +23,4 @@ By default,every server restart creates below users in in-memory database (Sqlli
 
 Apart from the above users, Sign up registration also inserts new user details in the sql database. 
 
-<<<<<<< HEAD
 Note: If server is restarted, newly created data will be erased and front-end screen may show no data in my-profile page. 
-=======
-Note: If server is restarted, newly created data will be erased and front-end screen may show no data in my-profile page. 
->>>>>>> 0929ef6e480c62478cdfa152cfa5a44175b7885c
