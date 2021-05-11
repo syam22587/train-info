@@ -6,18 +6,18 @@ const initializeDb = () => {
   db.serialize(() => {
     const defaultUsers = [
       {
-        userName: "Syam ",
-        userEmail: "syam@gmail.com",
+        userName: "John Cena",
+        userEmail: "john@gmail.com",
         userPassword: "Password123",
       },
       {
-        userName: "Kumar",
-        userEmail: "kumar@gmail.com",
+        userName: "Steve Austin",
+        userEmail: "steve@gmail.com",
         userPassword: "Password123",
       },
       {
-        userName: "Robert",
-        userEmail: "robert@gmail.com",
+        userName: "The Hulk",
+        userEmail: "hulk@gmail.com",
         userPassword: "Password123",
       },
     ];

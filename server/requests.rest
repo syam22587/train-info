@@ -1,0 +1,9 @@
+GET http://localhost:4001/login
+
+
+###
+
+
+
+GET http://localhost:4001/getUserDetails
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyRW1haWwiOiJzeWFtQGdtYWlsLmNvbSIsImlhdCI6MTYyMDAxMDYyNX0.-OB41WwJCLmMPsPw6BZz7ej6VBJbl2Gdf0oMpf-hZ1s

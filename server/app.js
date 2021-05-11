@@ -5,6 +5,7 @@ const cors = require("cors");
 
 const port = process.env.PORT || 4001;
 const index = require("./routes/index");
+const userService = require("./service/userService");
 const axios = require("axios").default;
 const database = require("./database");
 
@@ -13,14 +14,8 @@ database.initializeDb();
 
 const app = express();
 app.use(index);
+app.use(userService);
 app.use(cors());
-
-app.use("/login", (req, res) => {
-  console.log("called  request ");
-  res.send({
-    token: "test123",
-  });
-});
 
 const server = http.createServer(app);
 
@@ -32,6 +27,7 @@ const io = socketIo(server, {
 });
 
 let interval;
+let trainNumber = undefined;
 
 io.sockets.on("connection", (socket) => {
   console.log("New client connected");
@@ -50,16 +46,13 @@ io.sockets.on("connection", (socket) => {
 });
 
 const getApiAndEmit = async (socket) => {
-  // const response = new Date();
   // Emitting a new message. Will be consumed by the client
-
   // const axios = require("axios");
-  let response = await getBreeds();
-
+  let response = await getAllTrainDetails();
   socket.emit("FromAPI", response);
 };
 
-const getBreeds = async () => {
+const getAllTrainDetails = async () => {
   console.log("calling ");
   try {
     let test = await axios.get(
